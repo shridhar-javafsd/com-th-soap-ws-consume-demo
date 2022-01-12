@@ -21,26 +21,24 @@ public class EmployeeClient extends WebServiceGatewaySupport {
 	}
 
 	public GetAllEmployeesResponse getAllEmployees() {
-		GetEmployeeRequest request = new GetEmployeeRequest();
+		GetAllEmployeesRequest request = new GetAllEmployeesRequest();
 		log.info("Requesting ... ");
 		GetAllEmployeesResponse response = (GetAllEmployeesResponse) getWebServiceTemplate().marshalSendAndReceive(
 				"http://localhost:8099/ws/employees", request,
 				new SoapActionCallback("https://www.torryharris.com/soap-ws-demo/GetEmployeeRequest"));
 		return response;
 	}
-	
+
 	public GetEmployeeResponse addEmployee() {
 		AddEmployeeRequest request = new AddEmployeeRequest();
-		request.setEmployeeId(10);
-		request.setFirstName("Donu");
-		request.setSalary(65000);
-		
+		request.setFirstName("Ronu");
+		request.setSalary(58000);
+
 		log.info("Requesting ... ");
 		GetEmployeeResponse response = (GetEmployeeResponse) getWebServiceTemplate().marshalSendAndReceive(
 				"http://localhost:8099/ws/employees", request,
 				new SoapActionCallback("https://www.torryharris.com/soap-ws-demo/GetEmployeeRequest"));
 		return response;
 	}
-
 
 }

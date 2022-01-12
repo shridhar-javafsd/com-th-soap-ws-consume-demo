@@ -25,9 +25,9 @@ public class App {
 			LOG.info(response.getEmployeeType().getEmployeeId() + " " + response.getEmployeeType().getFirstName() + " "
 					+ response.getEmployeeType().getSalary());
 
-//			GetAllEmployeesResponse response2 = quoteClient.getAllEmployees();
-//			response2.getEmployeesType()
-//					.forEach(obj -> LOG.info(obj.employeeId + " " + obj.firstName + " " + obj.salary));
+			GetAllEmployeesResponse response2 = quoteClient.getAllEmployees();
+			response2.getEmployeesType()
+					.forEach(obj -> LOG.info(obj.employeeId + " " + obj.firstName + " " + obj.salary));
 
 			GetEmployeeResponse response3 = quoteClient.addEmployee();
 			LOG.info(response3.getEmployeeType().getEmployeeId() + " " + response3.getEmployeeType().getFirstName()
