@@ -8,8 +8,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import com.th.ws.consume.demo.GetEmployeeResponse;
-
 @SpringBootApplication
 public class App {
 
@@ -23,9 +21,17 @@ public class App {
 	CommandLineRunner lookup(EmployeeClient quoteClient) {
 		return args -> {
 
-			GetEmployeeResponse response = quoteClient.getEmployee(101);
-			LOG.info(response.getEmployee().getEmployeeId() + " " + response.getEmployee().getFirstName() + " "
-					+ response.getEmployee().getSalary());
+			GetEmployeeResponse response = quoteClient.getEmployee(3);
+			LOG.info(response.getEmployeeType().getEmployeeId() + " " + response.getEmployeeType().getFirstName() + " "
+					+ response.getEmployeeType().getSalary());
+
+//			GetAllEmployeesResponse response2 = quoteClient.getAllEmployees();
+//			response2.getEmployeesType()
+//					.forEach(obj -> LOG.info(obj.employeeId + " " + obj.firstName + " " + obj.salary));
+
+			GetEmployeeResponse response3 = quoteClient.addEmployee();
+			LOG.info(response3.getEmployeeType().getEmployeeId() + " " + response3.getEmployeeType().getFirstName()
+					+ " " + response3.getEmployeeType().getSalary());
 
 		};
 	}
