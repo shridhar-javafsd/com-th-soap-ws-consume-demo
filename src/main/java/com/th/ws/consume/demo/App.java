@@ -21,11 +21,12 @@ public class App {
 	CommandLineRunner lookup(EmployeeClient quoteClient) {
 		return args -> {
 
-			GetEmployeeResponse response = quoteClient.getEmployee(3);
+			GetEmployeeResponse response = quoteClient.getEmployee(5);
 			LOG.info(response.getEmployeeType().getEmployeeId() + " " + response.getEmployeeType().getFirstName() + " "
 					+ response.getEmployeeType().getSalary());
 
 			GetAllEmployeesResponse response2 = quoteClient.getAllEmployees();
+			LOG.info("Getting all employees");
 			response2.getEmployeesType()
 					.forEach(obj -> LOG.info(obj.employeeId + " " + obj.firstName + " " + obj.salary));
 

@@ -10,6 +10,8 @@ public class EmployeeClient extends WebServiceGatewaySupport {
 
 	private static final Logger log = LoggerFactory.getLogger(EmployeeClient.class);
 
+	// getBySalary, updateEmployee, deleteEmployee
+
 	public GetEmployeeResponse getEmployee(int employeeId) {
 		GetEmployeeRequest request = new GetEmployeeRequest();
 		request.setEmployeeId(employeeId);
@@ -31,8 +33,8 @@ public class EmployeeClient extends WebServiceGatewaySupport {
 
 	public GetEmployeeResponse addEmployee() {
 		AddEmployeeRequest request = new AddEmployeeRequest();
-		request.setFirstName("Ronu");
-		request.setSalary(58000);
+		request.setFirstName("Bonu");
+		request.setSalary(64000);
 
 		log.info("Requesting ... ");
 		GetEmployeeResponse response = (GetEmployeeResponse) getWebServiceTemplate().marshalSendAndReceive(
